@@ -1,0 +1,143 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    title Front Desk Login
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    // Bootstrap core CSS
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css', rel='stylesheet')
+    // Material Design Bootstrap
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css', rel='stylesheet')
+    // JQuery
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    // Bootstrap tooltips
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js')
+    // Bootstrap core JavaScript
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js')
+    // MDB core JavaScript
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js')
+    style.
+      body
+      {
+      font-size:11px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      }
+      html,
+      body,
+      header,
+      .view {
+      height: 100%;
+      }
+      @media (max-width: 740px) {
+      html,
+      body,
+      header,
+      .view {
+      height: 1000px;
+      }
+      }
+      @media (min-width: 800px) and (max-width: 850px) {
+      html,
+      body,
+      header,
+      .view {
+      height: 650px;
+      background-color:#1a344d;
+      }
+      }
+      @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+      background: #1C2331;
+      }
+      }
+  body
+    // Navbar
+    nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.scrolling-navbar
+      .container
+        // Brand
+        a.navbar-brand(href='https://mdbootstrap.com/docs/jquery/', target='_blank')
+          strong Admin Portal
+        // Collapse
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        // Links
+        #navbarSupportedContent.collapse.navbar-collapse
+          // Left
+          ul.navbar-nav.mr-auto
+            li.nav-item.active
+              a.nav-link(href='#')
+                | Home
+                span.sr-only (current)
+            li.nav-item
+              a.nav-link(href='https://mdbootstrap.com/docs/jquery/', target='_blank') About 
+          // Right
+          
+    // Navbar
+    // Full Page Intro
+    .view.full-page-intro(style="background-image: url('https://viewbug_com.s3.amazonaws.com/media/images/contests/contest7840_banner.jpg'); background-repeat: no-repeat; background-size: cover;")
+      // Mask & flexbox options
+      .mask.rgba-black-light.d-flex.justify-content-center.align-items-center
+        // Content
+        .container
+          // Grid row
+          .row.wow.fadeIn
+            // Grid column
+            .col-md-6.mb-4.white-text.text-center.text-md-left
+              br
+              br
+              br
+              h1.display-4.font-weight-bold YOUR LOGO HERE
+              hr.hr-light
+              a.btn.btn-indigo.btn-lg(target='_blank', href='#')
+                | Request Admin Access
+                i.fa.fa-graduation-cap.ml-2
+            // Grid column
+            // Grid column
+            .col-md-6.col-xl-5.mb-4
+              // Card
+              .card
+                // Card content
+                .card-body
+                  // Form
+                  form(action='/loginmethod', method='POST')
+                    // Heading
+                    h3.dark-grey-text.text-center
+                      strong Login
+                    hr
+                    .md-form
+                    h6.dark-grey-text.text-left
+                     strong User Name
+                      input.form-control(type='text', name='name', required='')
+                      //label(for='form3') User name
+                    .md-form
+                    h6.dark-grey-text.text-left
+                     strong Password
+                      input.form-control(type='text', name='password', required='')
+                      //label(for='form2') Password
+                    .text-center
+                      input.btn.btn-indigo(type='submit', name='input', value='Submit')
+                  // Form
+                  // /.Card
+                  // Grid column
+                  // Grid row
+                  // Content
+                  // Mask & flexbox options
+                  // Full Page Intro
+                  // /.Footer
+                  // SCRIPTS
+                  // JQuery
+                  script(type='text/javascript', src='js/jquery-3.3.1.min.js')
+                  // Bootstrap tooltips
+                  script(type='text/javascript', src='js/popper.min.js')
+                  // Bootstrap core JavaScript
+                  script(type='text/javascript', src='js/bootstrap.min.js')
+                  // MDB core JavaScript
+                  script(type='text/javascript', src='js/mdb.min.js')
+                  // Initializations
+                  script(type='text/javascript').
+                    // Animations initialization
+                    new WOW().init();

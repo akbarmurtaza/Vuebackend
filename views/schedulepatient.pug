@@ -1,0 +1,207 @@
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    title Front Desk Dashboard
+    // Bootstrap core CSS
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css', rel='stylesheet')
+    // Material Design Bootstrap
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css', rel='stylesheet')
+    // JQuery
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    // Bootstrap tooltips
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js')
+    // Bootstrap core JavaScript
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js')
+    // MDB core JavaScript
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js')
+    style.
+      body
+      {
+      font-size:11px;
+      background: url("https://viewbug_com.s3.amazonaws.com/media/images/contests/contest7840_banner.jpg") center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      }
+      html,
+      body,
+      header,
+      .view {
+      height: 100%;
+      }
+      @media (max-width: 740px) {
+      html,
+      body,
+      header,
+      .view {
+      height: 1000px;
+      }
+      }
+      @media (min-width: 800px) and (max-width: 850px) {
+      html,
+      body,
+      header,
+      .view {
+      height: 650px;
+      background-color:#1a344d;
+      }
+      }
+      @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+      background: #1C2331;
+      }
+      }
+      .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+      }
+      .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 15px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+      }
+      .sidenav a:hover {
+      color: #f1f1f1;
+      }
+      .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+      }
+      @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+      }
+  body.grey.lighten-3
+    // Main Navigation
+    header
+      // Navbar
+      nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.scrolling-navbar
+        .container-fluid
+          // Brand
+          a.navbar-brand.waves-effect(href='https://mdbootstrap.com/docs/jquery/', target='_blank')
+            strong.blue-text Front Desk Dashboard
+          // Collapse
+          button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+          // Links
+          #navbarSupportedContent.collapse.navbar-collapse
+            // Left
+            ul.navbar-nav.mr-auto
+              li.nav-item.active
+                a.nav-link.waves-effect(href='#')
+                  | Home
+                  span.sr-only (current)
+              li.nav-item
+                a.nav-link.waves-effect(href='https://mdbootstrap.com/docs/jquery/', target='_blank')
+                  | Manage
+                  | Patients
+              li.nav-item
+                a.nav-link.waves-effect(href='https://mdbootstrap.com/docs/jquery/getting-started/download/', target='_blank') Schedules
+              li.nav-item
+                a.nav-link.waves-effect(href='https://mdbootstrap.com/education/bootstrap/', target='_blank')
+      // Navbar
+      // Sidebar
+      br
+      br
+      br
+      br
+      #mySidenav.sidenav
+        a(href='#')
+          span.glyphicon.glyphicon-signal  
+          |  Manage Patients 
+          font(color='red')
+            i.fa.fa-medkit(aria-hidden='true')
+        a(href='#')
+          span.glyphicon.glyphicon-equalizer  
+          |  Schedules 
+          font(color='blue')
+            i.fa.fa-calendar-minus-o(aria-hidden='true')
+        a(href='#')
+          span.glyphicon.glyphicon-cog  
+          |  Settings
+        a(href='javascript:void(0)', onclick='closeNav()')
+          i.fa.fa-remove(aria-hidden='true')
+      span(style='font-size:30px;cursor:pointer;', onclick='openNav()')
+        i.fa.fa-plus-square.text-info(size='12px')
+      .container
+        .row
+          .col
+            section.mt-5.wow.fadeIn
+              .card
+                h5.card-header.info-color.white-text.text-center.py-4
+                  strong Schedule Appointment
+                // Card content
+                .card-body.px-lg-5.pt-0
+                  // Form
+                  form.text-center(action='/addschedulelogic', method='POST', style='color: #757575;')
+                    .form-row
+                      .col
+                        // First name
+                        .md-form
+                          label Patient
+                          br
+                          br
+                          select.browser-default.custom-select(name='pid')
+                            option(selected='') Choose Patient
+                            option(value='ENT Specialist __NAME__') PATIENT_NAME ID INFO
+                      .col
+                        // Last name
+                        .md-form
+                          label Doctor
+                          br
+                          br
+                          select.browser-default.custom-select(name='doc')
+                            option(selected='') Choose Doctor/Specialist
+                            option(value='ENT Specialist __NAME__') ENT Specialist __NAME__
+                            option(value='OBS Specialist __NAME__') OBS Specialist __NAME__
+                            option(value='Pharma Specialist __NAME__') Pharma Specialist __NAME__
+                    // E-mail
+                    .md-form.mt-0
+                      label Day
+                      br
+                      br
+                      select.browser-default.custom-select(name='day')
+                        option(selected='') Choose Day
+                        option(value='Monday') Monday
+                        option(value='Tuesday') Tuesday
+                        option(value='Wednesday') Wednesday
+                        option(value='Wednesday') Thursday
+                        option(value='Wednesday') Friday
+                    .md-form.mt-0
+                      label TimeSlot
+                      br
+                      br
+                      select.browser-default.custom-select(name='timeslot')
+                        option(selected='') Choose Timeslot
+                        option(value='11am-12pm') 11am-12pm
+                        option(value='12pm-1pm') 12pm-1pm
+                        option(value='1pm-2pm') 12pm-1pm
+                        option(value='2pm-3pm') 12pm-1pm
+                        option(value='3pm-4pm') 12pm-1pm
+                    // Sign up button
+                    button.btn.btn-outline-info.btn-rounded.btn-block.my-4.waves-effect.z-depth-0(type='submit') Book Schedule
+                  // Form
+    script.
+      function openNav() {
+      document.getElementById("mySidenav").style.width = "200px";
+      }
+      function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      }

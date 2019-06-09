@@ -1,0 +1,147 @@
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    title Front Desk Dashboard
+    // Bootstrap core CSS
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css', rel='stylesheet')
+    // Material Design Bootstrap
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css', rel='stylesheet')
+    // JQuery
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    // Bootstrap tooltips
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js')
+    // Bootstrap core JavaScript
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js')
+    // MDB core JavaScript
+    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js')
+    style.
+      body
+      {
+      font-size:11px;
+      background-color: #b3d9ff;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      }
+      html,
+      body,
+      header,
+      .view {
+      height: 100%;
+      }
+      @media (max-width: 740px) {
+      html,
+      body,
+      header,
+      .view {
+      height: 1000px;
+      }
+      }
+      @media (min-width: 800px) and (max-width: 850px) {
+      html,
+      body,
+      header,
+      .view {
+      height: 650px;
+      background-color:#1a344d;
+      }
+      }
+      @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+      background: #1C2331;
+      }
+      }
+      .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+      }
+      .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 15px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+      }
+      .sidenav a:hover {
+      color: #f1f1f1;
+      }
+      .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+      }
+      @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+      }
+  body.grey.lighten-3
+    // Main Navigation
+    header
+      // Navbar
+      
+        i.fa.fa-plus-square.text-info(size='12px')
+      .container
+       .card-body.z-depth-1-half.white-text(style='background-color: rgba(34, 31, 31, 0.3);            border-radius: 8px;')
+        input#myInput.form-control(type='text', onkeyup='myFunction()', placeholder='Enter First Name')
+        br
+      .container
+       .card(style='width : 300px;')
+        .row
+          .col
+            section
+              .container
+                table#myTable.table(name='myTable')
+                  tbody
+                    tr
+                  thead.black.white-text
+                  
+                  tbody
+                  - var n = 1;
+                  each obj in items
+                    tr
+                      td  #{ n++ }
+                      td  #{obj.f_name}
+                      td  #{obj.cnic}
+                br
+    script.
+      function openNav() {
+      document.getElementById("mySidenav").style.width = "200px";
+      }
+      function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      }
+      
+      var x = 0;
+            function myFunction() {
+            // Declare variables
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+            } else {
+            tr[i].style.display = "none";
+            }
+            }
+            }
+            }     
